@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منيو مطعم وحدائق هوى دجلة العائلي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="logo.jpg" width="150">
+  <h1>مطعم وحدائق هوى دجلة العائلي</h1>
+  <p>07776621811 - 07878108553</p>
+  <hr>
+  <div id="menuSections"></div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem('menuData')) || [];
+
+    const categories = ['مشاوي', 'عصائر', 'أراكيل'];
+    const container = document.getElementById('menuSections');
+
+    categories.forEach(category => {
+      const section = document.createElement('div');
+      const items = data.filter(item => item.category === category);
+
+      if (items.length > 0) {
+        section.innerHTML = `<h2>${category}</h2>`;
+        items.forEach(item => {
+          section.innerHTML += `
+            <div>
+              <img src="\${item.image}" width="100">
+              <h3>\${item.name}</h3>
+              <p>\${item.price} دينار</p>
+            </div>
+          `;
+        });
+        container.appendChild(section);
+      }
+    });
+  </script>
+</body>
+</html>

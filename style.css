@@ -1,0 +1,21 @@
+body {
+  font-family: 'Arial', sans-serif;
+  direction: rtl;
+  background-color: #fff;
+  color: #c99c5b; /* لون ذهبي */
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+h1, h2, h3, p {
+  color: #c99c5b;
+}
+input, select, button {
+  margin: 10px;
+  padding: 8px;
+}
+#menuItems div {
+  border: 1px solid #c99c5b;
+  margin: 10px;
+  padding: 10px;
+}
